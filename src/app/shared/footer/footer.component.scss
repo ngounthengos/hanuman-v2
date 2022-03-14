@@ -1,0 +1,120 @@
+@import "/src/settings";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  max-width: 90vw;
+  color: $white_color;
+  border: none;
+}
+
+.active {
+  transition: 0.5s;
+  font-weight: 900;
+  color: $yellow_color;
+}
+.backgroundCol {
+  position: relative;
+  bottom: -5px;
+}
+.background-image {
+  max-width: 100%;
+  width: 105vw;
+  margin: 0;
+  padding: 0;
+  stroke: $primary_color;
+  stroke-width: 100px;
+  vertical-align: bottom;
+}
+
+.list {
+  font-weight: bold;
+}
+.social {
+  width: 18px;
+  margin-right: 10px;
+}
+#footerMenu {
+  background-color: $primary_color !important;
+  color: white;
+  border: none;
+  padding-left: $text-margin !important;
+  padding-right: $text-margin !important;
+  .navbar-collapse {
+    margin-top: 1rem !important;
+    margin-left: 10px !important;
+  }
+  .brand {
+    margin-bottom: $text_size;
+  }
+  .list-unstyled {
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .title {
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    line-height: 1.5 !important;
+  }
+  .brandText {
+    line-height: 1.5 !important;
+  }
+  .list {
+    line-height: 1.5 !important;
+  }
+}
+.footer-copyright {
+  background-color: $black_color;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+}
+.hanuman {
+  margin-bottom: 20px;
+}
+
+//RESPONSIVENESS
+@media only screen and (min-width: $md_screen) and (orientation: portrait) {
+  .footer-copyright {
+    background-color: $black_color;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .backgroundCol {
+    bottom: -20px;
+  }
+}
+@media only screen and (min-width: $md_screen) and (orientation: landscape) {
+  .backgroundCol {
+    bottom: -75px;
+  }
+}
+@media only screen and (min-width: $lg_screen) {
+  .backgroundCol {
+    display: none;
+  }
+  #footerMenu {
+    padding-top: 100px;
+    padding-bottom: 150px;
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
+  }
+  .footer-copyright {
+    background-color: $black_color;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.2em;
+  }
+  .subtitle {
+    margin-bottom: 32px;
+  }
+}
+@media only screen and (min-width: $xl_screen) {
+}

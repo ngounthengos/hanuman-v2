@@ -1,0 +1,284 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+
+<!-- START Header Section -->
+<div class="pageContainer">
+  <!-- END Header Section -->
+  <div class="fullSection">
+    <app-header [headerList]="content?.header[0]"></app-header>
+  </div>
+  <div class="container-lg mainPage">
+    <div class="fullSection">
+      <div class="row" id="section1">
+        <div
+          class="col-6 imageCol initialHide"
+          animateOnScroll
+          animationName="animated fade-in-left"
+          *ngIf="content?.section1[0]?.image; null"
+        >
+          <img
+            class="main-image mx-auto d-flex lazyload"
+            [src]="backendUrl + content?.section1[0]?.image"
+            alt="{{ content?.section1[0]?.title }}"
+            (load)="show()"
+          />
+        </div>
+        <div
+          class="col-6 textCol initialHide"
+          animateOnScroll
+          animationName="animated fade-in-bottom"
+        >
+          <h1
+            class="title"
+            *ngIf="content?.section1[0]?.title; null"
+            [innerHtml]="s1Title"
+          ></h1>
+          <h2
+            class="subtitle"
+            *ngIf="content?.section1[0]?.sub_title; null"
+            [innerHtml]="s1Subtitle"
+          ></h2>
+          <h5
+            class="description"
+            *ngIf="content?.section1[0]?.description; null"
+            [innerHtml]="s1Description"
+          ></h5>
+
+          <a
+            [href]="'tel:' + content?.section1[0]?.link"
+            *ngIf="content?.section1[0]?.link; null"
+            rel="noopener"
+          >
+            <div [innerHtml]="s1Button" class="button"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="fullSection">
+      <div class="row" id="section2">
+        <div
+          class="col-6 textCol initialHide"
+          animateOnScroll
+          animationName="animated fade-in-bottom"
+        >
+          <h1
+            class="title"
+            *ngIf="content?.section2[0]?.title; null"
+            [innerHtml]="s2Title"
+          ></h1>
+          <h2
+            class="subtitle"
+            *ngIf="content?.section2[0]?.sub_title; null"
+            [innerHtml]="s2Subtitle"
+          ></h2>
+          <h5
+            class="description"
+            *ngIf="content?.section2[0]?.description; null"
+            [innerHtml]="s2Description"
+          ></h5>
+          <a
+            [href]="content?.section2[0]?.link"
+            *ngIf="content?.section2[0]?.link; null"
+            rel="noopener"
+          >
+            <div class="button" [innerHtml]="s2Button"></div>
+          </a>
+        </div>
+
+        <div
+          class="col-6 imageCol initialHide"
+          animateOnScroll
+          animationName="animated fade-in-right"
+          *ngIf="content?.section2[0].image; null"
+        >
+          <img
+            class="main-image mx-auto d-flex lazyload"
+            [src]="backendUrl + content?.section2[0].image"
+            (load)="show()"
+            alt="{{ content?.section2[0]?.title }}"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fullSection" *ngIf="english">
+    <div class="row" id="contactForm">
+      <div
+        class="col-10 col-lg-6 formCol initialHide"
+        animateOnScroll
+        animationName="animated fade-in-bottom"
+      >
+        <h1 class="title">Contact Us</h1>
+        <form #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)">
+          <div class="form-group">
+            <label for="Full Name">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your name"
+              value=""
+              name="fullName"
+              ngModel
+              required
+              #fullName="ngModel"
+            />
+            <small
+              class="form-text text-muted"
+              *ngIf="fullName.touched && !fullName.value"
+              >Please enter your full name.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="Email Address">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              name="emailAddress"
+              ngModel
+              email
+              required
+              #emailAddress="ngModel"
+            />
+            <small
+              class="form-text text-muted"
+              *ngIf="
+                (emailAddress.touched && !emailAddress.value) ||
+                (emailAddress.touched && !emailAddress.valid)
+              "
+              >Please provide/check input again.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="Phone Number">Phone Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              aria-describedby="emailHelp"
+              placeholder="Enter phone number"
+              name="phoneNumber"
+              ngModel
+              required
+              #phoneNumber="ngModel"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Text Message">Message</label>
+            <textarea
+              class="form-control"
+              rows="3"
+              name="textMessage"
+              ngModel
+              required
+              #textMessage="ngModel"
+            ></textarea>
+          </div>
+          <button
+            class="g-recaptcha"
+            data-sitekey="reCAPTCHA_site_key"
+            data-callback="onSubmit"
+            data-action="submit"
+            [disabled]="!contactForm.valid"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="fullSection" *ngIf="!english">
+    <div class="row" id="contactForm">
+      <div
+        class="col-10 col-lg-6 formCol initialHide"
+        animateOnScroll
+        animationName="animated fade-in-bottom"
+      >
+        <h1 class="title">ទំនាក់ទំនងមកកាន់យើង</h1>
+        <form #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)">
+          <div class="form-group">
+            <label for="Full Name">ឈ្មោះពេញ</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="សូមបញ្ចូលឈ្មោះរបស់អ្នក"
+              value=""
+              name="fullName"
+              ngModel
+              required
+              #fullName="ngModel"
+            />
+            <small
+              class="form-text text-muted"
+              *ngIf="fullName.touched && !fullName.value"
+              >សូមបញ្ចូលឈ្មោះពេញរបស់អ្នក</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="Email Address">អ៊ីម៉ែល</label>
+            <input
+              type="email"
+              class="form-control"
+              aria-describedby="emailHelp"
+              placeholder="សូមបញ្ចូលអ៊ីម៉ែលរបស់អ្នក"
+              name="emailAddress"
+              ngModel
+              email
+              required
+              #emailAddress="ngModel"
+            />
+            <small
+              class="form-text text-muted"
+              *ngIf="
+                (emailAddress.touched && !emailAddress.value) ||
+                (emailAddress.touched && !emailAddress.valid)
+              "
+              >សូមបញ្ចូលទិន្នន័យអោយបានត្រឹមត្រូវ</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="Phone Number">លេខទូរស័ព្ទ</label>
+            <input
+              type="tel"
+              class="form-control"
+              aria-describedby="emailHelp"
+              placeholder="សូមបញ្ចូលលេខទូរស័ព្ទរបស់អ្នក"
+              name="phoneNumber"
+              ngModel
+              required
+              #phoneNumber="ngModel"
+            />
+          </div>
+          <div class="form-group">
+            <label for="Text Message">សារជាអក្សរ</label>
+            <textarea
+              class="form-control"
+              rows="3"
+              name="textMessage"
+              ngModel
+              required
+              #textMessage="ngModel"
+            ></textarea>
+          </div>
+          <button
+            class="g-recaptcha"
+            data-sitekey="reCAPTCHA_site_key"
+            data-callback="onSubmit"
+            data-action="submit"
+            [disabled]="!contactForm.valid"
+          >
+            បញ្ចូន
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="fullFooter">
+    <app-footer class="footer"></app-footer>
+  </div>
+</div>

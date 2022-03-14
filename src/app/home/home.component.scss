@@ -1,0 +1,366 @@
+@import "/src/settings";
+.desktop-image {
+  display: none !important;
+  @media only screen and (min-width: $lg_screen) {
+    display: block !important;
+  }
+}
+#headerDesktop {
+  display: none;
+  @media only screen and (min-width: $lg_screen) {
+    display: block;
+  }
+}
+#block {
+  @media only screen and (min-width: $lg_screen) {
+    background-image: url(../../../src/assets/images/background-yellow-90a.svg);
+    background-repeat: no-repeat;
+    background-position: 40vw 600px;
+    background-size: 100%;
+  }
+}
+.blockSection1 {
+  @media only screen and (min-width: $lg_screen) {
+    background-image: url(../../../src/assets/images/background-blue-90a.svg);
+    background-repeat: no-repeat;
+    background-position: 50vw 20vh;
+    background-size: 70%;
+  }
+}
+
+.blockSection2 {
+  @media only screen and (min-width: $lg_screen) {
+    background-image: url(../../../src/assets/images/background-blue-90.svg);
+    background-repeat: no-repeat;
+    background-position: -20vw 20vh;
+    background-size: 70%;
+  }
+}
+#section1 {
+  background-image: url(../../../src/assets/images/background-blue-45.svg);
+  background-repeat: no-repeat;
+  background-position: center 4em;
+  background-size: 160%;
+  padding: 5em 0;
+  .main-image {
+    position: relative;
+    width: 80vw;
+    float: right;
+    right: -30vw;
+    top: -8vh;
+  }
+  .secondary-image {
+    width: 80vw;
+    position: relative;
+    margin-top: -15vh;
+    left: -30vw;
+  }
+  .title,
+  .subtitle,
+  .description,
+  .button {
+    margin-left: $text-margin;
+    margin-right: $text-margin;
+  }
+  @media (orientation: portrait) and(min-width: $md_screen) {
+    background-position: -20vw -5em;
+    background-size: 120%;
+    .main-image {
+      width: 60vw;
+      right: -15vw;
+      top: -15vh;
+    }
+    .secondary-image {
+      width: 60vw;
+      top: -20vh;
+      left: -20vw;
+    }
+    .textCol {
+      max-width: 60%;
+    }
+    .imageCol {
+      order: 1;
+    }
+    .imageCol2 {
+      order: 2;
+    }
+  }
+  @media (orientation: landscape) and (min-width: $md_screen) {
+    background-position: -40vw -10em;
+    background-size: 100%;
+    .main-image {
+      width: 45vw;
+      right: -15vw;
+    }
+    .secondary-image {
+      width: 50vw;
+      left: -20vw;
+    }
+    .imageCol {
+      order: 1;
+    }
+    .imageCol2 {
+      order: 2;
+    }
+  }
+  @media only screen and (min-width: $lg_screen) {
+    background-image: url(../../../src/assets/images/background-blue-90a.svg);
+    background-repeat: no-repeat;
+    background-position: 50vw 20vh;
+    background-size: 70%;
+    padding: auto 0 auto 0;
+    height: 100%;
+    .imageCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .textCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .imageCol {
+      order: 1;
+      .desktop-image {
+        display: block !important;
+        max-width: 450px;
+        height: 70vh;
+      }
+      .main-image {
+        display: none !important;
+      }
+    }
+    .imageCol2 {
+      order: 2;
+    }
+    .secondary-image {
+      display: none;
+    }
+    .textCol {
+      max-width: 100%;
+    }
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      max-width: 100%;
+      margin-right: 10%;
+      margin-left: 10%;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}
+#section2 {
+  padding: 5em 0;
+  background-image: url(../../../src/assets/images/background-blue-45a.svg);
+  background-repeat: no-repeat;
+  background-position: 10vw 10em;
+  background-size: 130%;
+  .main-image {
+    max-width: $max_image_h;
+    position: relative;
+    float: right;
+    width: 100%;
+    right: -45vw;
+    z-index: 0;
+  }
+  .textCol {
+    z-index: 100;
+  }
+  .background-image {
+    position: absolute;
+    width: 120%;
+    top: -8vh;
+    right: -30vw;
+  }
+  .title,
+  .subtitle,
+  .description,
+  .button {
+    margin-left: $text-margin;
+    margin-right: $text-margin;
+  }
+  @media (orientation: portrait) and (min-width: $md_screen) {
+    background-position: 30vw 10em;
+    background-size: 90%;
+    .main-image {
+      width: 70vw;
+      right: -25vw;
+      margin-bottom: 10vh;
+    }
+    .background-image {
+      width: 80vw;
+      top: -5vh;
+      right: -10vw;
+    }
+  }
+  @media (orientation: landscape) and (min-width: $md_screen) {
+    background-position: 48vw center;
+    background-size: 65%;
+    .main-image {
+      width: 60vw;
+      right: -25vw;
+      margin-bottom: 10vh;
+    }
+    .background-image {
+      width: 60vw;
+      right: -10vw;
+      display: none;
+    }
+  }
+  @media only screen and (min-width: $lg_screen) {
+    background-image: url(../../../src/assets/images/background-blue-90.svg);
+    background-repeat: no-repeat;
+    background-position: -20vw 20vh;
+    background-size: 70%;
+    padding: auto 0 auto 0;
+    height: 100%;
+    .imageCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .textCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .main-image {
+      display: none !important;
+    }
+    .desktop-image {
+      display: block !important;
+      max-width: 450px;
+      height: 70vh;
+    }
+    .secondary-image {
+      display: none !important;
+    }
+    .textCol {
+      order: 1;
+      .title,
+      .subtitle,
+      .description,
+      .button {
+        max-width: 100%;
+        margin-right: 10% !important;
+        margin-left: 10% !important;
+      }
+    }
+  }
+}
+#section3 {
+  padding: 5em 0;
+  .main-image {
+    max-width: 240px;
+    width: 80%;
+  }
+  .textCol {
+    right: 2vw;
+  }
+  .aboveTitle {
+    font-size: smaller;
+  }
+  .title {
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: $primary_color;
+  }
+  .subtitle {
+    font-weight: 500;
+  }
+
+  button {
+    float: left;
+    background: none !important;
+    color: $primary_color !important;
+    padding: 0 !important;
+  }
+  fa-icon {
+    color: $primary_color;
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    opacity: 0.5;
+    :hover {
+      opacity: 1;
+    }
+    z-index: 1000;
+  }
+  .carousel {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+  // Responsive
+  @media (orientation: portrait) and (min-width: $md_screen) {
+    padding: 5em 0;
+    .carousel {
+      width: 90%;
+    }
+    .main-image {
+      max-width: 200px;
+      width: 80%;
+    }
+  }
+  @media (orientation: landscape) and (min-width: $md_screen) {
+    .carousel {
+      width: 80%;
+    }
+    .aboveTitle {
+      font-weight: bold;
+      font-size: clamp(1rem, 4vw, 1.5rem) !important;
+    }
+    .description {
+      font-size: $description_size;
+    }
+    .title {
+      font-size: $title_size;
+      font-weight: 700;
+      color: $primary_color;
+    }
+    .subtitle {
+      font-size: $subtitle_size;
+      font-weight: 500;
+    }
+    button {
+      float: left;
+      margin-top: 0.8em;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 10%;
+    }
+  }
+  @media only screen and (min-width: $lg_screen) {
+    background: none;
+    padding: auto 0 auto 0;
+    .imageCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .textCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .carousel {
+      transition-duration: 1s;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 75px;
+      padding-right: 75px;
+      border-radius: 5px;
+      background-color: rgba(1, 62, 106, 0.05);
+      max-width: 800px;
+    }
+    .textCol {
+      top: 50px;
+      right: 0;
+      margin-bottom: 75px;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+    .carousel {
+      max-width: 800px;
+    }
+  }
+}

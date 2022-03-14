@@ -1,0 +1,55 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+
+<!-- START Header Section -->
+<!-- <app-header [headerList]="header"></app-header> -->
+<img
+  class="header-background"
+  src="../../../assets/images/carreer.jpg"
+  (load)="show()"
+  alt="Job Opportunity"
+/>
+<!-- END Header Section -->
+
+<div class="container-lg" id="bodyContent">
+  <div class="row">
+    <h1 class="pageTitle"><span class="category">Career</span></h1>
+  </div>
+  <ng-container *ngFor="let item of content; index as i">
+    <div class="row itemCol mb-3">
+      <div class="col-4 col-lg-4 imageCol">
+        <a
+          href="/career/{{ item.category_career?.name }}/{{ item?.title }}"
+          rel="noopener"
+          ><img
+            class="main-image mx-auto d-flex lazyload"
+            [src]="backendUrl + item?.image"
+            alt="{{ item?.title }}"
+        /></a>
+      </div>
+      <div class="col-8 col-md-7 col-lg-8 textCol">
+        <a
+          href="/career/{{ item.category_career?.name }}/{{ item?.title }}"
+          rel="noopener"
+          *ngIf="item?.title; null"
+          ><h4 class="title">{{ item?.title }}</h4></a
+        >
+        <p class="category" *ngIf="item.category_career?.name; null">
+          <a href="/career/{{ item.category_career?.name }}" rel="noopener">{{
+            item.category_career?.name
+          }}</a>
+        </p>
+        <p class="description shorten-2" *ngIf="item?.excerpt; null">
+          {{ item?.excerpt }}
+        </p>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<div class="fullFooter12">
+  <app-footer class="footer"></app-footer>
+</div>

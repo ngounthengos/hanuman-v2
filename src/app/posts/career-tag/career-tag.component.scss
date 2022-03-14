@@ -1,0 +1,80 @@
+@import "/src/settings";
+.header-background {
+  max-width: 100%;
+  width: 100%;
+  background-color: none;
+  z-index: 0 !important;
+  margin-bottom: -25%;
+}
+h1 {
+  z-index: 1000;
+}
+.pageTitle {
+  z-index: 500 !important;
+  padding: 2em 0 1em 0;
+  padding-left: $text-margin !important;
+  padding-right: $text-margin !important;
+  .category {
+    color: $yellow_color;
+  }
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}
+.itemCol {
+  padding-left: $text-margin !important;
+  padding-right: $text-margin !important;
+  margin: 1em 0 2em 0;
+}
+.imageCol {
+  .main-image {
+    max-width: 100%;
+    border-radius: 0.2em 0 0 0.2em;
+    object-fit: cover;
+    width: 30vw;
+    height: 30vw;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+}
+.textCol {
+  height: 30vw;
+  .date,
+  .title,
+  .category,
+  .description,
+  .cta {
+    padding-left: $text-margin;
+  }
+  .cta {
+    position: absolute;
+    bottom: 0;
+  }
+  .title {
+    color: $primary_color;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+@media only screen and (min-width: $md_screen) and (orientation: portrait) {
+}
+@media only screen and (min-width: $md_screen) and (orientation: landscape) {
+}
+@media only screen and (min-width: $lg_screen) {
+  .pageTitle {
+    padding-top: 4em;
+  }
+  .main-image {
+    width: 250px;
+    height: 250px !important;
+    object-fit: cover;
+  }
+  .textCol {
+    max-height: 250px;
+  }
+  .content {
+    padding-bottom: 10em;
+  }
+}
+@media only screen and (min-width: $xl_screen) {
+}

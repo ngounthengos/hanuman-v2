@@ -1,0 +1,86 @@
+@import "/src/settings";
+
+#sectionHeader {
+  margin-bottom: -10em;
+  .header-background {
+    width: 100%;
+    background-color: none;
+    margin-bottom: -15%;
+  }
+  .header-drop {
+    position: relative;
+    max-width: 100%;
+    float: left;
+    width: 28vw;
+    height: auto;
+    top: -12vh;
+    margin-left: 5vw;
+    z-index: 50;
+  }
+  .header-image {
+    max-width: 100%;
+    position: relative;
+    float: right;
+    right: 0vw;
+    width: 55vw;
+    top: -8em;
+  }
+  .backgroundCol {
+    position: relative;
+    top: -2px;
+  }
+
+  // Tablet & Phone Lanscape
+  @media (orientation: portrait) and (min-width: $md_screen) {
+    margin-bottom: -15em;
+    .header-background {
+      overflow: hidden;
+    }
+    .header-drop {
+      max-width: 20vw;
+      top: -15vh;
+      margin-left: 10vw;
+    }
+    .header-image {
+      max-width: 40vw;
+      top: -25vh;
+    }
+  }
+  @media (orientation: landscape) and (min-width: $md_screen) {
+    .header-background {
+      top: 0;
+      overflow: hidden;
+      margin-top: -10vh;
+    }
+    .header-drop {
+      width: 20vw;
+      height: auto;
+      top: -25vh;
+      left: 5vw;
+    }
+    .header-image {
+      width: 40vw;
+      top: -40vh;
+    }
+  }
+  // Laptop
+  @media only screen and (min-width: $lg_screen) {
+    margin-bottom: -480px;
+    .header-background {
+      margin-bottom: -280px;
+    }
+    .header-drop {
+      max-width: 250px;
+      top: -350px;
+      left: 100px;
+    }
+    .header-image {
+      top: -560px;
+      max-width: 450px;
+      right: 0;
+    }
+  }
+  // Wide Screen
+  @media only screen and (min-width: $xl_screen) {
+  }
+}

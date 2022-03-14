@@ -1,0 +1,175 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+
+<div class="pageContainer">
+  <!-- START of Section 01 -->
+  <div
+    class="fullSection embed-responsive embed-responsive-16by9"
+    id="section1"
+  >
+    <iframe
+      class="embed-responsive-item e2e-iframe-trusted-src"
+      [src]="safeUrl"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <!-- End of Section 01 Carousel for Desktop ONLY-->
+
+  <div id="block">
+    <div class="fullSection">
+      <!-- START of Section 01-->
+      <div class="row" id="section2">
+        <div
+          class="col-6 imageCol initialHide"
+          animateOnScroll
+          animationName="animated rotate-in-2-fwd-cw"
+        >
+          <img
+            class="main-image mx-auto d-flex lazyload"
+            [src]="backendUrl + content?.section2[0]?.image"
+            *ngIf="content?.section2[0]?.image; null"
+          />
+          <img
+            class="desktop-image mx-auto d-flex lazyload"
+            [src]="backendUrl + content?.section2[0]?.desktop_image"
+            *ngIf="content?.section2[0]?.desktop_image; null"
+          />
+        </div>
+        <div class="col-6 textCol my-auto">
+          <h1
+            class="title"
+            *ngIf="content?.section2[0]?.title; null"
+            [innerHtml]="s2Title"
+          ></h1>
+          <h2
+            class="subtitle"
+            *ngIf="content?.section2[0]?.sub_title; null"
+            [innerHtml]="s2Subtitle"
+          ></h2>
+          <h5
+            class="description"
+            *ngIf="content?.section2[0]?.description; null"
+            [innerHtml]="s2Description"
+          ></h5>
+          <a
+            href="{{ content?.section2[0]?.link }}"
+            *ngIf="content?.section2[0]?.link; null"
+            rel="noopener"
+          >
+            <div class="button" [innerHtml]="s2Button"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End of Section 01-->
+
+    <!-- START of Section 03 -->
+    <div class="fullSection">
+      <div class="row" id="section3">
+        <div
+          class="col-7 col-lg-6 textCol initialHide"
+          animateOnScroll
+          animationName="animated fade-in-bottom"
+        >
+          <h1
+            class="title"
+            *ngIf="content?.section3?.title; null"
+            [innerHtml]="s3Title"
+          ></h1>
+          <h2
+            class="subtitle"
+            *ngIf="content?.section3?.sub_stitle; null"
+            [innerHtml]="s3Subtitle"
+          ></h2>
+          <h5
+            class="description"
+            *ngIf="content?.section3?.description; null"
+            [innerHtml]="s3Description"
+          ></h5>
+          <a
+            href="{{ content?.section3?.link }}"
+            *ngIf="content?.section3?.link; null"
+            rel="noopener"
+          >
+            <div
+              class="button"
+              *ngIf="content?.section3?.button; null"
+              [innerHtml]="s3Button"
+            ></div>
+          </a>
+        </div>
+        <div
+          class="col-5 col-lg-6 imageCol initialHide"
+          animateOnScroll
+          animationName="animated slide-in-right"
+        >
+          <img
+            class="main-image lazyload"
+            [src]="backendUrl + content?.section3?.image"
+            *ngIf="content?.section3?.image; null"
+          />
+          <img
+            class="desktop-image mx-auto d-flex lazyload"
+            [src]="backendUrl + content?.section3?.desktop_image"
+            *ngIf="content?.section3?.desktop_image; null"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- START of Section 04 -->
+    <div class="fullSection">
+      <div class="row" id="section4">
+        <div
+          class="col-6 imageCol initialHide"
+          animateOnScroll
+          animationName="animated rotate-in-2-fwd-cw"
+        >
+          <img
+            class="main-image mx-auto d-flex lazyload"
+            [src]="backendUrl + content?.section4?.image"
+            *ngIf="content?.section4?.image; null"
+            (load)="show()"
+          />
+          <img
+            class="desktop-image mx-auto d-flex lazyload"
+            [src]="backendUrl + content?.section4?.desktop_image"
+            *ngIf="content?.section4?.desktop_image; null"
+            (load)="show()"
+          />
+        </div>
+        <div class="col-6 textCol">
+          <h1
+            class="title"
+            *ngIf="content?.section4?.title; null"
+            [innerHtml]="s4Title"
+          ></h1>
+          <h2
+            class="subtitle"
+            *ngIf="content?.section4?.subtitle; null"
+            [innerHtml]="s4Subtitle"
+          ></h2>
+          <h5
+            class="description"
+            *ngIf="content?.section4?.description; null"
+            [innerHtml]="s4Description"
+          ></h5>
+          <a
+            href="{{ content?.section4?.link }}"
+            *ngIf="content?.section4?.link; null"
+            rel="noopener"
+          >
+            <div class="button" [innerHtml]="s4Button"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fullFooter">
+    <app-footer class="footer"></app-footer>
+  </div>
+</div>

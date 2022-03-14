@@ -1,0 +1,62 @@
+/* Setting */
+
+/* Import Font  */
+@import url("https://fonts.googleapis.com/css2?family=Kantumruy:wght@300;400;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/bahnschrift");
+
+$text-margin-left: 5vw;
+$text-margin: clamp(0.8rem, 5vw, 64px);
+
+$maxWidth: 800px;
+$max_image_h: 800px;
+$max_image_v: 600px;
+
+$max_text: 600px;
+$text_width: 85%;
+$text_margin_lg: 10vw;
+
+/* Screen Size */
+$xs_screen: 360px;
+$sm_screen: 480px;
+$md_screen: 768px;
+$lg_screen: 1280px;
+$xl_screen: 1440px;
+$title_size: clamp(2rem, 7vw, 2.5rem);
+$subtitle_size: clamp(1rem, 6vw, 2rem);
+$description_size: clamp(1rem, 4vw, 1.5rem);
+$text_size: clamp(0.8rem, 2vw, 1.2rem);
+$medium_size: clamp(0.8rem, 3vw, 1.2rem);
+$small_size: clamp(0.8rem, 2vw, 1.2rem);
+
+/* Background Colors */
+$default_bg: #101010;
+$extra_bg: #1e1e1e;
+$lines_color: rgba(255, 255, 255, 0.07);
+
+/* Colors */
+$primary_color: #013e6a;
+$black_color: #231f20;
+$yellow_color: #d99c26;
+
+$default_color: #bbb;
+$extra_color: #999;
+$light_color: #eee;
+$white_color: #fff;
+$active_color: #4bffa5;
+$blue_color: #1e9dfe;
+$error_color: red;
+
+/* Fonts */
+$default_font: "Bahnschrift", "Kantumruy", Arial, sans-serif;
+
+/* Fonts Size */
+$default_size: 16px;
+$large_size: 24px;
+$extra_large_size: 24px;
+$extra_small_size: 12px;
+
+/* Icons Size */
+$default_icon_size: 36px;
+
+/* Line Height */
+$line_height: 1.5;

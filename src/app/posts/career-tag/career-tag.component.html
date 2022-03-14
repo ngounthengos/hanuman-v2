@@ -1,0 +1,55 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+
+<img
+  class="header-background lazyload"
+  src="../../../assets/images/carreer.jpg"
+  (load)="show()"
+/>
+
+<div class="container-lg">
+  <div>
+    <h1 class="pageTitle">
+      <a routerLink="/career" rel="noopener">Career</a> |
+      <span class="category">{{ paramQuery }}</span>
+    </h1>
+  </div>
+  <div class="content">
+    <ng-container *ngFor="let item of content[0]; index as i">
+      <div
+        *ngIf="
+          (item.category_career.name | lowercase) == (paramQuery | lowercase)
+        "
+      >
+        <div class="row itemCol">
+          <div class="col-4 imageCol">
+            <a
+              href="/career/{{ item.category_career.name }}/{{ item.title }}"
+              rel="noopener"
+              ><img
+                class="main-image mx-auto d-flex lazyload"
+                [src]="backendUrl + item?.image"
+            /></a>
+          </div>
+          <div class="col-8 textCol">
+            <a
+              href="/career/{{ item.category_career.name }}/{{ item.title }}"
+              rel="noopener"
+              ><h4 class="title">{{ item?.title }}</h4></a
+            >
+            <p class="description shorten-2">
+              {{ item?.excerpt }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<div class="fullFooter12">
+  <app-footer class="footer"></app-footer>
+</div>

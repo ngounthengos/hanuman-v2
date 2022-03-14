@@ -1,0 +1,52 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+
+<div class="pageContainer12">
+  <div class="fullSection12">
+    <div class="row" id="section1">
+      <div
+        id="carouselExampleSlidesOnly"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              [src]="backendUrl + content?.section1[0]?.image"
+              class="d-block w-100 lazyload"
+              alt="Be Hanuman distributor"
+              (load)="show()"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fullSection12">
+    <!-- Start of Section 2 -->
+    <div class="row" id="section2">
+      <div class="col-12 col-md-6 textCol">
+        <h1 class="title" [innerHtml]="s2Title"></h1>
+        <h2 class="subtitle" [innerHtml]="s2Subtitle"></h2>
+        <h4 class="description" [innerHtml]="s2Description"></h4>
+        <a [href]="content?.section2?.link" rel="noopener">
+          <div class="button" [innerHtml]="s2Button"></div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 imageCol">
+        <img
+          class="main-image d-flex mx-auto lazyload"
+          [src]="backendUrl + content?.section2?.image"
+          (load)="show()"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,158 @@
+@import "/src/settings";
+.mainPage {
+  background-image: url(../../../assets/images/background-blue.svg);
+  background-repeat: no-repeat;
+  background-position: -30vw top;
+  background-size: 120%;
+  @media only screen and (min-width: $lg_screen) {
+    background: none;
+  }
+}
+.background {
+  @media only screen and (min-width: $lg_screen) {
+    display: none;
+  }
+}
+#section1 {
+  padding: 6em 0 3em 0;
+  .main-image {
+    max-width: $max_image_v;
+    width: 80%;
+  }
+  .textCol {
+    top: 2vh;
+  }
+  .title,
+  .subtitle,
+  .description,
+  .button {
+    // text-align: left;
+    margin-right: $text-margin;
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+  }
+  @media only screen and (min-width: $lg_screen) {
+    background: none;
+    padding: auto 0 auto 0;
+    height: 100%;
+    .textCol,
+    .imageCol {
+      margin-bottom: auto;
+    }
+    .main-image {
+      max-width: 450px;
+    }
+    .textCol {
+      top: 10vh;
+    }
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      max-width: $text_width;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}
+
+#section2 {
+  padding: 3em 0 6em 0;
+  .main-image {
+    max-width: $max_image_v;
+    width: 80%;
+  }
+  .textCol {
+    top: 3vh;
+  }
+  .title,
+  .subtitle,
+  .description,
+  .button {
+    margin-right: 0;
+    margin-left: $text-margin;
+    text-align: right !important;
+  }
+  button {
+    float: right;
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+  }
+  @media only screen and (min-width: $lg_screen) {
+    background: none;
+    padding: auto 0 auto 0;
+    height: 100%;
+    .textCol,
+    .imageCol {
+      margin-bottom: auto;
+    }
+    .main-image {
+      max-width: 400px;
+    }
+    .textCol {
+      top: 10vh;
+    }
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      max-width: 600px;
+      margin-right: 0;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}
+
+#contactForm {
+  padding: 6em 0;
+  .title {
+    text-align: center;
+    margin-bottom: 5vh;
+    text-transform: uppercase;
+    color: $primary_color;
+    font-weight: 900;
+  }
+  label,
+  input {
+    font-family: $default_font;
+    color: $black_color;
+  }
+  .formCol {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .form-control {
+    border: 2px solid $primary_color;
+  }
+  button {
+    float: right;
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+  }
+  @media only screen and (min-width: $lg_screen) {
+    margin-bottom: 200px;
+    .title {
+      margin-bottom: 40px;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}
+input.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
+input.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
+
+button:disabled {
+  opacity: 0.75 !important;
+}

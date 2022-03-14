@@ -1,0 +1,107 @@
+@import "/src/settings";
+//section 1
+#section1 {
+}
+//Section 2
+#section2 {
+  padding: 5em 0;
+  .main-image {
+    max-width: $max_image_h;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    z-index: 100;
+  }
+  .background-image {
+    position: absolute;
+    width: 150vw;
+    top: -25vh;
+    right: -20vw;
+  }
+  .textCol {
+    margin-bottom: 20px;
+  }
+  .title,
+  .subtitle,
+  .description,
+  .button {
+    text-align: left;
+    margin-left: auto;
+    margin-left: $text-margin;
+    margin-right: $text-margin;
+  }
+  //RESPONSIVENESS
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+    .main-image {
+      position: relative;
+      width: 50vw;
+    }
+    .background-image {
+      display: none;
+    }
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      width: 100%;
+    }
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+    .main-image {
+      position: relative;
+      width: 40vw;
+    }
+    .background-image {
+      display: none;
+    }
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      text-align: left;
+      max-width: 80%;
+      margin-left: auto;
+      margin-left: $text-margin;
+    }
+    button {
+      float: left;
+      margin-left: $text-margin;
+    }
+  }
+  @media only screen and (min-width: $lg_screen) {
+    padding: auto 0 auto 0;
+    height: 100%;
+    .imageCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .textCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .main-image {
+      position: relative;
+      right: 120px;
+      top: 0px;
+      width: 400px;
+    }
+    .background-image {
+      display: none;
+    }
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      text-align: left;
+      max-width: $max_text;
+      margin-left: $text_margin_lg;
+    }
+    button {
+      float: left;
+      margin-left: $text_margin_lg;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}

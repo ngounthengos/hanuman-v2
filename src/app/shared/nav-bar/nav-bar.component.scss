@@ -1,0 +1,117 @@
+@import "/src/settings";
+#mainMenu {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar-collapse {
+  padding-top: 1em;
+  padding-left: 5px;
+}
+.navbar {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #013c67;
+}
+.show-background {
+  background-color: #013c67;
+}
+nav,
+a {
+  font-family: $default_font;
+  text-transform: uppercase;
+  color: $white_color;
+  .backgroundCol {
+    bottom: -75px;
+  }
+  z-index: 15;
+}
+
+fa-icon {
+  color: white;
+}
+.navbar-nav {
+  margin-right: 2em;
+}
+.nav-item {
+  background: none !important;
+  :hover {
+    transition: 0.5s;
+    color: $yellow_color;
+  }
+}
+.active {
+  transition: 0.5s;
+  font-weight: 900;
+  color: $yellow_color;
+}
+.navbar-toggler-icon {
+  background-color: white;
+}
+.dropdown-item {
+  color: $primary_color;
+  z-index: 10px;
+}
+.navbar-brand {
+  margin-left: 0.5em;
+  margin-right: 2em;
+}
+.langSwitch {
+  margin-right: auto;
+  :hover {
+    color: inherit;
+  }
+}
+.indicator {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background-color: black;
+  bottom: -8;
+  transition: 0.5s;
+  border-radius: 4px;
+}
+form {
+  button {
+    background-color: white !important;
+    border-radius: 10px !important;
+    width: auto;
+    height: auto;
+  }
+  fa-icon {
+    color: $primary_color !important;
+  }
+  .form-control {
+    border-radius: 5px;
+  }
+}
+
+@media only screen and (min-width: $md_screen) and (orientation: portrait) {
+}
+@media only screen and (min-width: $md_screen) and (orientation: landscape) {
+  .navbar {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+}
+@media only screen and (min-width: $lg_screen) {
+  .langSwitch {
+    margin-right: 0;
+    margin-left: auto;
+    margin-right: 2em;
+  }
+  .navbar-collapse {
+    padding-top: 0;
+  }
+  .navbar {
+    padding: 30px 5vw 50px 5vw;
+    transition-duration: 2px;
+  }
+}
+@media only screen and (min-width: $xl_screen) {
+}
+.backgroundCol {
+  width: 100vw;
+}

@@ -1,0 +1,28 @@
+.shorten-5 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5 !important;
+  -webkit-box-orient: vertical;
+}
+.shorten-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.shorten-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  @media only screen and (min-width: $lg_screen) {
+    -webkit-line-clamp: 3;
+  }
+}
+
+.shorten-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}

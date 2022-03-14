@@ -1,0 +1,5 @@
+<app-nav-bar [menuList]="menuItems" *ngIf="show === 'true'"></app-nav-bar>
+<div class="container-fluid overflow-hidden body">
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
+</div>
+<app-tap-to-top *ngIf="show === 'true'"> </app-tap-to-top>

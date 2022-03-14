@@ -1,0 +1,46 @@
+<link
+  rel="preload"
+  as="image"
+  href="{{ backendUrl + headerList?.desktop_image }}"
+  rel="noopener"
+  type="img.png"
+/>
+<div class="row section-header" id="sectionHeader">
+  <!-- <div class="col-12 backgroundCol2" *ngIf="headerList?.backgroundImage2 == null">
+        <img class="header-background2" [src]="backendUrl + headerList?.backgroundImage2" />
+    </div> -->
+  <div class="col-12 backgroundCol">
+    <img
+      class="header-background mx-auto lazyload"
+      [src]="backendUrl + headerList?.desktop_image"
+      alt="Hanuman Beverage"
+      *ngIf="headerList?.desktop_image; null"
+    />
+    <img
+      class="header-background lazyload"
+      src="../../../assets/images/header-background.svg"
+      *ngIf="!headerList?.desktop_image; null"
+    />
+  </div>
+
+  <div
+    class="col-6 initialHide"
+    animateOnScroll
+    animationName="animated rotate-in-2-fwd-cw"
+    *ngIf="headerList?.secondary_image; null"
+  >
+    <img
+      class="header-drop lazyload"
+      [src]="backendUrl + headerList?.secondary_image"
+    />
+  </div>
+
+  <div
+    class="col-6 initialHide"
+    animateOnScroll
+    animationName="animated slide-left"
+    *ngIf="headerList?.image; null"
+  >
+    <img class="header-image lazyload" [src]="backendUrl + headerList?.image" />
+  </div>
+</div>

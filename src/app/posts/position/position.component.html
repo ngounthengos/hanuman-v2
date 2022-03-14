@@ -1,0 +1,54 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+
+<div class="container-lg position">
+  <div class="row breadcrumbs">
+    <h5>
+      <a href="/career" rel="noopener"
+        >Careers |
+        <span class="category"
+          ><a
+            href="/career/{{ article.category_career.name }}"
+            rel="noopener"
+            >{{ article.category_career.name }}</a
+          ></span
+        ></a
+      >
+    </h5>
+  </div>
+  <div class="row imageCol">
+    <div class="col-12">
+      <img
+        class="main-image lazyload"
+        [src]="backendUrl + article.image"
+        (load)="show()"
+      />
+    </div>
+  </div>
+  <div class="row textCol">
+    <div class="col-12">
+      <h1
+        class="title"
+        [innerHtml]="contentTitle"
+        *ngIf="contentTitle; null"
+      ></h1>
+      <h2
+        class="subtitle"
+        [innerHtml]="contentSubtitle"
+        *ngIf="contentSubtitle; null"
+      ></h2>
+      <div
+        [innerHtml]="contentDescription"
+        class="description"
+        *ngIf="contentDescription; null"
+      ></div>
+    </div>
+  </div>
+</div>
+<div class="fullFooter12">
+  <app-footer class="footer"></app-footer>
+</div>

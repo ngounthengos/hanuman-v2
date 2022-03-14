@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,OAAO,EAAE,GAAG;CACf;;AACD,AAAA,MAAM,AAAA,MAAM,CAAA;EACR,OAAO,EAAE,CAAC;CACb;;AACD,AAAA,cAAc,CAAC;EACX,QAAQ,EAAE,KAAK;EACf,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,mBAAmB;EAC/B,OAAO,EAAE,IAAI;CACb;;AACJ,AAAA,eAAe,CAAC;EAChB,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,mBAAmB;CAC9B",
+    "sources": [
+        "tap-to-top.component.scss"
+    ],
+    "names": [],
+    "file": "tap-to-top.component.css"
+}

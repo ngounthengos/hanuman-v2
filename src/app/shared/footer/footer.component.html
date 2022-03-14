@@ -1,0 +1,127 @@
+<div class="backgroundCol footer">
+  <img
+    src="assets/images/footer-background.svg"
+    class="background-image"
+    alt="Hanuman footer background"
+  />
+</div>
+<footer class="page-footer">
+  <div class="container-fluid text-center text-md-left">
+    <div class="row justify-content-between" id="footerMenu">
+      <div class="col-sm-12 col-lg-6">
+        <div class="row hanuman">
+          <div class="col-12 text-left">
+            <h2 class="text-uppercase title">
+              <!-- {{footerItems?.footerMenu.brand.title}} -->
+              {{ brandItems?.contact[0]?.title }}
+            </h2>
+            <p class="subtitle">
+              <!-- {{footerItems?.footerMenu.brand.subtitle}} -->
+              {{ brandItems?.contact[0]?.description }}
+            </p>
+          </div>
+          <div class="col-3 col-lg-2 text-left">
+            <p class="list">{{ address }}</p>
+          </div>
+          <div class="col-9 col-lg-10 text-left">
+            <p class="brandText">{{ brandItems?.contact[0]?.address }}</p>
+          </div>
+          <div class="col-3 col-lg-2 text-left">
+            <p class="list">{{ phone }}</p>
+          </div>
+          <div class="col-9 col-lg-10 text-left">
+            <p class="brandText">{{ brandItems?.contact[0]?.phone }}</p>
+          </div>
+
+          <div class="col-3 col-lg-2 text-left">
+            <p class="list">{{ email }}</p>
+          </div>
+          <div class="col-9 col-lg-10 text-left">
+            <p class="brandText">{{ brandItems?.contact[0]?.email }}</p>
+          </div>
+          <div class="col-3 col-lg-2 text-left">
+            <p class="list">{{ social }}</p>
+          </div>
+          <div class="col-9 col-lg-10 text-left" style="margin-top: -5px">
+            <a
+              href="{{ facebookLink }}"
+              rel="noopener"
+              target="_blank"
+              *ngIf="brandItems?.contact[0]?.facebook"
+              ><img
+                src="../../../assets/images/facebook.svg"
+                class="social"
+                alt="Hanuman Beverages Facebook Page"
+                rel="noopener"
+            /></a>
+            <a
+              href="{{ instagramLink }}"
+              rel="noopener"
+              target="_blank"
+              *ngIf="brandItems?.contact[0]?.instagram"
+              ><img
+                src="../../../assets/images/instagram.svg"
+                class="social"
+                alt="Hanuman Beverages Instagram Profile"
+                rel="noopener"
+            /></a>
+            <a
+              href="{{ tiktokLink }}"
+              rel="noopener"
+              target="_blank"
+              *ngIf="brandItems?.contact[0]?.tiktok"
+              ><img
+                src="../../../assets/images/tiktok.svg"
+                class="social"
+                alt="Hanuman Beverages TikTok Account"
+                rel="noopener"
+            /></a>
+            <a
+              href="{{ linkedinLink }}"
+              rel="noopener"
+              target="_blank"
+              *ngIf="brandItems?.contact[0]?.linkedin"
+              ><img
+                src="../../../assets/images/linkedin.svg"
+                class="social"
+                alt="Hanuman Beverages LinkedIn Page"
+                rel="noopener"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-lg-5">
+        <div class="row">
+          <div class="col-6 mb-md-0 mb-3 text-left">
+            <h5 class="title text-uppercase">{{ mainMenu }}</h5>
+            <ul class="list-unstyled">
+              <ng-container *ngFor="let elem of footerItems?.menu">
+                <li>
+                  <a href="{{ elem.url }}" rel="noopener">
+                    <h5>{{ elem.title }}</h5>
+                  </a>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+          <div class="col-6 mb-md-0 mb-3 text-left">
+            <ul class="list-unstyled">
+              <h5 class="title text-uppercase">{{ supportMenu }}</h5>
+              <ng-container *ngFor="let elem of footerItems?.page">
+                <li>
+                  <a href="{{ elem.url }}" rel="noopener">
+                    <h5>{{ elem?.title }}</h5>
+                  </a>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      {{ copyRight }}
+    </div>
+  </div>
+</footer>

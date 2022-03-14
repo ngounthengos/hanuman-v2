@@ -1,0 +1,530 @@
+@import "/src/settings";
+@import "/src/content";
+
+// MEDIA
+.desktop-image {
+  display: none !important;
+}
+
+#section1 {
+  margin-top: 4em;
+  margin-bottom: 4em;
+  .main-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .carousel {
+    margin-left: auto;
+    margin-right: auto;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  img {
+    width: 90vw;
+    height: 60vw;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  .carousel-indicators {
+    bottom: -1em;
+    & li {
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+    }
+  }
+  //RESPONSIVENESS
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+    img {
+      width: 80vw;
+      height: 50vw;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+    img {
+      width: 70vw;
+      height: 40vw;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+  @media only screen and (min-width: $lg_screen) {
+    margin-top: 10vh;
+    img {
+      width: 576px;
+      height: 384px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}
+
+#section2 {
+  margin-bottom: 5em;
+  .title {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .cards {
+    display: flex;
+    --distance: -2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 20px 20px 20px 20px;
+    overflow: auto;
+    /* this will hide the scrollbar in mozilla based browsers */
+    overflow: -moz-scrollbars-none;
+    /* this will hide the scrollbar in internet explorers */
+    -ms-overflow-style: none;
+    .card {
+      background-color: white;
+      border-radius: 0.8rem;
+      padding: 5vw;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1),
+        0px 0px 25px rgba(0, 0, 0, 0.1);
+      width: 50vw;
+      height: 80vw;
+      flex: 0 0 auto;
+      overflow-x: hidden !important;
+      transition: 0.2s;
+      &:not(:first-child) {
+        margin-left: -2rem;
+      }
+      & .main-image {
+        width: 12vw;
+        height: 12vw;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+      & .title {
+        text-transform: uppercase;
+        color: $primary_color;
+        font-weight: 900;
+        margin-bottom: 0.5em;
+        min-height: 2.5em;
+        line-height: 1.2 !important;
+      }
+      & .description {
+        line-height: 1.5 !important;
+        min-height: 7.5em !important;
+      }
+      & .link {
+        margin-top: auto;
+        margin-bottom: 0em;
+      }
+    }
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-1rem);
+    }
+    .card:hover ~ .card,
+    .card:focus-within ~ .card {
+      transform: translateX(3rem);
+    }
+  }
+  .cards2 {
+    padding: 20px 20px 20px 20px;
+    width: 100%;
+    .card {
+      max-width: 90%;
+      background-color: white;
+      border-radius: 0.8rem;
+      padding: 2rem 2rem 2rem 2rem;
+      transform-style: preserve-3d;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1),
+        0px 0px 25px rgba(0, 0, 0, 0.1);
+      flex: 0 0 auto;
+      transition: 0.2s;
+      & .main-image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+      & .title {
+        text-transform: uppercase;
+        color: $primary_color;
+        text-align: left;
+        font-weight: 900;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  //RESPONSIVENESS
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+    .cards {
+      display: flex;
+      --distance: -2rem;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: visible;
+      padding: 20px 20px 20px 20px;
+
+      overflow: auto;
+      /* this will hide the scrollbar in mozilla based browsers */
+      overflow: -moz-scrollbars-none;
+      /* this will hide the scrollbar in internet explorers */
+      -ms-overflow-style: none;
+      .card {
+        background-color: white;
+        border-radius: 0.8rem;
+        padding: 2rem 2rem 2rem 2rem;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1),
+          0px 0px 25px rgba(0, 0, 0, 0.1);
+        width: 38vw;
+        height: 60vw;
+        flex: 0 0 auto;
+        overflow-x: hidden !important;
+        & .main-image {
+          width: 12vw;
+          height: 12vw;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+    margin-bottom: 20vh;
+    .cards {
+      display: flex;
+      --distance: -2rem;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: visible;
+      padding: 20px 20px 20px 20px;
+
+      overflow: auto;
+      /* this will hide the scrollbar in mozilla based browsers */
+      overflow: -moz-scrollbars-none;
+      /* this will hide the scrollbar in internet explorers */
+      -ms-overflow-style: none;
+      .card {
+        background-color: white;
+        border-radius: 0.8rem;
+        padding: 2rem 2rem 2rem 2rem;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1),
+          0px 0px 25px rgba(0, 0, 0, 0.1);
+        width: 30vw;
+        height: 45vw;
+        flex: 0 0 auto;
+        overflow-x: hidden !important;
+        transition: 0.2s;
+        &:not(:first-child) {
+          margin-left: -2rem;
+        }
+        & .main-image {
+          width: 12vw;
+          height: 12vw;
+          object-fit: cover;
+          border-radius: 50%;
+          margin-bottom: 1rem;
+        }
+        & .title {
+          text-transform: uppercase;
+          color: $primary_color;
+          text-align: left;
+          font-weight: 900;
+          margin-bottom: 1rem;
+        }
+      }
+      .card:hover,
+      .card:focus-within {
+        transform: translateY(-1rem);
+      }
+      .card:hover ~ .card,
+      .card:focus-within ~ .card {
+        transform: translateX(3rem);
+      }
+    }
+  }
+  @media only screen and (min-width: $lg_screen) {
+    .description {
+      min-height: 12em !important;
+    }
+    .title {
+      min-height: 2.2em;
+      margin-bottom: 0 !important;
+    }
+    .cards {
+      display: flex;
+      --distance: 2rem;
+      flex-wrap: nowrap;
+      overflow-x: hidden;
+      overflow-y: visible;
+      padding: 20px 20px 20px 20px;
+
+      overflow: auto;
+      /* this will hide the scrollbar in mozilla based browsers */
+      overflow: -moz-scrollbars-none;
+      /* this will hide the scrollbar in internet explorers */
+      -ms-overflow-style: none;
+      .card {
+        width: 280px;
+        height: 400px;
+        flex: 0 0 auto;
+        overflow-x: hidden !important;
+        & .main-image {
+          width: 75px;
+          height: 75px;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}
+
+//Section 3
+#section3 {
+  background-image: url(../../../assets/images/background-blue-45.svg);
+  background-repeat: no-repeat;
+  background-position: center -5em;
+  background-size: 150%;
+  padding: 5em 0;
+  .main-image {
+    position: relative;
+    max-width: $max_image_h;
+    float: right;
+    width: 90vw;
+    right: -50vw;
+    top: 5vh;
+  }
+  .title,
+  .subtitle,
+  .description,
+  .button {
+    margin-left: $text-margin;
+    text-align: left;
+  }
+  .secondary-image {
+    position: relative;
+    float: left;
+    width: 80vw;
+    left: -50vw;
+    top: -5vh;
+  }
+  .carousel {
+    width: 80%;
+  }
+  //RESPONSIVENESS
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+    background-position: -10vw center;
+    background-size: 120%;
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+    background-position: -20vw center;
+    background-size: 100%;
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      margin-left: $text-margin;
+      text-align: left;
+    }
+    .main-image {
+      right: -40vw;
+    }
+  }
+  @media only screen and (min-width: $lg_screen) {
+    background: none;
+    .main-image {
+      display: none !important;
+    }
+    .imageCol2 {
+      display: none;
+    }
+    .desktop-image {
+      max-width: 350px;
+      display: block !important;
+    }
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      max-width: $max_text;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}
+
+//Section 04 Carousel
+#section4 {
+  a {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+  }
+  .mainTextCol {
+    margin-bottom: 5vh;
+    .title,
+    .subtitle {
+      text-align: center;
+    }
+    .description {
+      text-align: justify;
+    }
+    .title,
+    .subtitle,
+    .description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .textCol {
+    height: 30vw;
+    position: relative;
+  }
+  .main-image {
+    object-fit: cover;
+    width: 30vw;
+    height: 30vw;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  .carousel {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    padding: 1.5em;
+  }
+  fa-icon {
+    color: $yellow_color;
+    font-size: 18px;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    opacity: 90%;
+    z-index: 500;
+    width: 5%;
+    padding: 1.5em;
+  }
+  .carousel-inner {
+    padding: 1em;
+  }
+  .carousel-item .title,
+  .date,
+  .description,
+  .cta {
+    text-align: left;
+    margin-left: $text-margin;
+    margin-right: $text-margin;
+  }
+  .cta {
+    position: absolute !important;
+    bottom: 0 !important;
+  }
+  .carousel-item .title {
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .blog {
+    .main-image {
+      width: 100%;
+    }
+    .textCol {
+      margin-bottom: 10vh;
+      .date,
+      .title,
+      .subtitle,
+      .description,
+      .link {
+        text-align: left !important;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+    }
+  }
+
+  //RESPONSIVENESS
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+    .textCol {
+      margin-bottom: 5vh;
+      .title,
+      .subtitle {
+        text-align: left;
+      }
+      .description {
+        text-align: justify;
+        width: 80%;
+      }
+    }
+    fa-icon {
+      color: $yellow_color;
+      font-size: 34px;
+    }
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+    .mainTextCol {
+      margin-bottom: 10vh;
+      .description {
+        width: 80%;
+        text-align: justify;
+      }
+    }
+    .carousel-item .title,
+    .date,
+    .description {
+      text-align: left;
+      color: black;
+      margin-left: $text-margin;
+    }
+    .main-image {
+      width: 100%;
+      height: 20vw;
+    }
+  }
+  @media only screen and (min-width: $lg_screen) {
+    padding: 10em 0;
+    .article {
+      max-height: 300px;
+    }
+    .imageCol {
+      margin: 0 !important;
+      padding: 0 !important;
+      .main-image {
+        margin: 0;
+        padding: 0;
+        object-fit: cover;
+        width: 200px;
+        height: 200px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+    }
+    .textCol {
+      margin-bottom: 0 !important;
+      padding: 0 !important;
+      .title {
+        min-height: 1.2em !important;
+        font-weight: bolder;
+      }
+      .description {
+        min-height: 2em !important;
+        text-align: justify;
+      }
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}

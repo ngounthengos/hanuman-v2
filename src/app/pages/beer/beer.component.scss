@@ -1,0 +1,238 @@
+@import "/src/settings";
+@import "/src/content.scss";
+
+// Beer
+.desktop-image {
+  display: none !important;
+}
+// Section 01
+#section1 {
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+    margin-bottom: 8em;
+  }
+}
+#block {
+  background-image: url(../../../assets/images/background-blue-90.svg);
+  background-repeat: no-repeat;
+  background-position: -160vw center;
+  background-size: 250%;
+  @media only screen and (min-width: $lg_screen) and (orientation: portrait) {
+    background: none;
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+    background: none;
+  }
+}
+
+// Section 02
+#section2 {
+  padding: 5em 0;
+  .main-image {
+    max-width: $max_image_v;
+    width: 100%;
+  }
+  .textCol {
+    position: relative;
+  }
+  .title,
+  .subtitle,
+  .description,
+  .button {
+    text-align: left;
+    margin-right: $text-margin;
+  }
+  //RESPONSIVENESS
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+    padding: 8em 0;
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+    .main-image {
+      max-width: $max_image_v;
+      width: 35vw;
+    }
+  }
+  @media only screen and (min-width: $lg_screen) {
+    background-image: url(../../../assets/images/background-blue-90.svg);
+    background-repeat: no-repeat;
+    background-position: -30vw 30vh;
+    background-size: 150vh;
+    padding: auto 0 auto 0;
+    height: 100%;
+    .imageCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .textCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .main-image {
+      display: none !important;
+    }
+    .imageCol {
+      .desktop-image {
+        max-width: 400px;
+        display: block !important;
+      }
+    }
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      text-align: left;
+      max-width: $max_text;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}
+
+// Sectionn 03
+#section3 {
+  padding: 5em 0;
+  .main-image {
+    position: relative;
+    max-width: $max_image_v;
+    width: 60vw;
+    float: right;
+    right: -18vw;
+  }
+  .textCol {
+    position: relative;
+    margin-top: 10vh;
+  }
+  .title,
+  .subtitle,
+  .description,
+  .button {
+    margin-left: $text-margin;
+    max-width: 85%;
+  }
+  .button {
+    margin-left: $text-margin;
+  }
+  //RESPONSIVENESS
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+    padding: 8em 0;
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+    .main-image {
+      width: 100%;
+      right: -15vw;
+    }
+    .textCol {
+      margin-top: 30vh;
+    }
+    .title,
+    .subtitle,
+    .description {
+      max-width: 70%;
+    }
+  }
+  @media only screen and (min-width: $lg_screen) {
+    background-image: url(../../../assets/images/background-blue-90a.svg);
+    background-repeat: no-repeat;
+    background-position: 50vw 20vh;
+    background-size: 150vh;
+    padding: auto 0 auto 0;
+    height: 100%;
+    .imageCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .textCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .main-image {
+      display: none !important;
+    }
+    .desktop-image {
+      display: block !important;
+      width: 400px;
+    }
+    .textCol {
+      margin-top: 100px;
+    }
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      text-align: left;
+      max-width: $max_text;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}
+
+// Section 04
+#section4 {
+  padding: 5em 0;
+  background: none;
+  .main-image {
+    max-width: $max_image_v;
+    position: relative;
+    float: left;
+    width: 50vw;
+  }
+  .textCol {
+    position: relative;
+  }
+  .title {
+    word-break: break-word;
+  }
+  .title,
+  .subtitle,
+  .description,
+  .button {
+    text-align: left;
+    margin-right: $text-margin;
+    max-width: $max_text;
+  }
+  //RESPONSIVENESS
+  @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+    padding: 8em 0;
+  }
+  @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+  }
+  @media only screen and (min-width: $lg_screen) {
+    background-image: url(../../../assets/images/background-blue-90.svg);
+    background-repeat: no-repeat;
+    background-position: -30vw 30vh;
+    background-size: 150vh;
+    padding: auto 0 auto 0;
+    height: 100%;
+    .imageCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .textCol {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .main-image {
+      display: none !important;
+    }
+    .desktop-image {
+      width: 400px;
+      left: 15vw;
+      display: block !important;
+    }
+    .title,
+    .subtitle,
+    .description,
+    .button {
+      text-align: left;
+      max-width: $max_text;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  @media only screen and (min-width: $xl_screen) {
+  }
+}

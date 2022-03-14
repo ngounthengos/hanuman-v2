@@ -1,0 +1,286 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+
+<div class="pageContainer">
+  <!-- START Header Section -->
+  <div class="fullSection">
+    <app-header [headerList]="content?.header[0]"></app-header>
+  </div>
+  <div class="block1">
+    <div class="fullSection">
+      <!-- Start of Section 1 - Text Center -->
+      <div class="row" id="section1">
+        <div
+          class="col-12 textCol initialHide"
+          animateOnScroll
+          animationName="animated fade-in-bottom animated-delay-0-2"
+        >
+          <h1
+            class="title"
+            *ngIf="content?.section1?.title; null"
+            [innerHtml]="s1Title"
+          ></h1>
+          <h2
+            class="subtitle"
+            *ngIf="content?.section1?.sub_title; null"
+            [innerHtml]="s1Subtitle"
+          ></h2>
+          <h5
+            class="description"
+            *ngIf="content?.section1?.description; null"
+            [innerHtml]="s1Description"
+          ></h5>
+          <a
+            [href]="content?.section1?.link"
+            *ngIf="content?.section1?.link; null"
+            rel="noopener"
+          >
+            <div class="button" [innerHtml]="s1Button"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start of Brewery Section 2 -->
+    <div class="fullSection">
+      <div class="row" id="section2">
+        <div
+          class="col-6 textCol initialHide my-lg-auto"
+          animateOnScroll
+          animationName="animated fade-in-left"
+        >
+          <h1
+            class="title"
+            *ngIf="content?.section2[0]?.title; null"
+            [innerHtml]="s2Title"
+          ></h1>
+          <h2
+            class="subtitle"
+            *ngIf="content?.section2[0]?.sub_title; null"
+            [innerHtml]="s2Subtitle"
+          ></h2>
+          <h5
+            class="description"
+            *ngIf="content?.section2[0]?.description; null"
+            [innerHtml]="s2Description"
+          ></h5>
+          <a
+            href="{{ content?.section2[0]?.link }}"
+            rel="noopener"
+            *ngIf="content?.section2[0]?.link; null"
+          >
+            <div
+              class="button"
+              *ngIf="content?.section2[0]?.button; null"
+              [innerHtml]="s2Button"
+            ></div>
+          </a>
+        </div>
+        <div
+          class="col-6 imageCol initialHide"
+          animateOnScroll
+          animationName="animated slide-in-right"
+        >
+          <img
+            class="main-image lazyload"
+            [src]="backendUrl + content?.section2[0]?.image"
+            *ngIf="content?.section2[0]?.image; null"
+            alt="{{ content?.section2[0]?.title }}"
+          />
+          <img
+            class="mx-auto d-flex desktop-image lazyload"
+            [src]="backendUrl + content?.section2[0]?.desktop_image"
+            *ngIf="content?.section2[0]?.desktop_image; null"
+            alt="{{ content?.section2[0]?.title }}"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="fullSection">
+      <!-- Start of Section 3 -->
+      <div class="row" id="section3">
+        <!-- Card 1 -->
+        <div class="row justify-content-lg-center" id="card-1">
+          <div
+            class="col-12 col-lg-4 imageCol initialHide"
+            animateOnScroll
+            animationName="animated slide-in-right"
+          >
+            <img
+              class="main-image mx-auto d-flex lazyload"
+              [src]="backendUrl + content?.section3[0]?.image"
+              *ngIf="content?.section3[0]?.image; null"
+            />
+          </div>
+          <div
+            class="col-12 col-lg-4 textCol initialHide"
+            animateOnScroll
+            animationName="animated fade-in-left"
+          >
+            <h5
+              class="description"
+              *ngIf="content?.section3[0].description; null"
+              [innerHtml]="content?.section3[0].description"
+            ></h5>
+            <h4
+              class="name"
+              *ngIf="content?.section3[0].name; null"
+              [innerHtml]="content?.section3[0].name"
+            ></h4>
+            <h4
+              class="position"
+              *ngIf="content?.section3[0].position; null"
+              [innerHtml]="content?.section3[0].position"
+            ></h4>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="row justify-content-lg-center" id="card-2">
+          <div
+            class="col-12 col-lg-4 imageCol initialHide"
+            animateOnScroll
+            animationName="animated slide-in-left delay-0-5"
+          >
+            <img
+              class="main-image mx-auto d-flex lazyload"
+              [src]="backendUrl + content?.section3[1]?.image"
+              *ngIf="content?.section3[1]?.image; null"
+            />
+          </div>
+          <div
+            class="col-12 col-lg-4 textCol initialHide"
+            animateOnScroll
+            animationName="animated fade-in-right delay-0-5"
+          >
+            <h5
+              class="description"
+              *ngIf="content?.section3[1].description; null"
+              [innerHtml]="content?.section3[1].description"
+            ></h5>
+            <h4
+              class="name"
+              *ngIf="content?.section3[1].name; null"
+              [innerHtml]="content?.section3[1].name"
+            ></h4>
+            <h4
+              class="position"
+              *ngIf="content?.section3[1].position; null"
+              [innerHtml]="content?.section3[1].position"
+            ></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block2">
+    <div class="fullSection">
+      <!-- Start of Section 4 -->
+      <div class="row" id="section4">
+        <div class="col-5 imageCol initialHide">
+          <img
+            class="main-image animated slide-in-left lazyload"
+            [src]="backendUrl + content?.section4.image"
+            alt="{{ content?.section4.title }}"
+            *ngIf="content?.section4?.image; null"
+          />
+          <img
+            class="desktop-image mx-auto d-flex animated slide-in-left lazyload"
+            [src]="backendUrl + content?.section4?.desktop_image"
+            *ngIf="content?.section4?.desktop_image; null"
+            alt="{{ content?.section4.title }}"
+          />
+        </div>
+        <div class="col-7 textCol my-lg-auto">
+          <h1
+            class="title"
+            [innerHtml]="s4Title"
+            *ngIf="content?.section4.title; null"
+          ></h1>
+          <h2
+            class="subtitle"
+            [innerHtml]="s4Subtitle"
+            *ngIf="content?.section4.sub_title; null"
+          ></h2>
+          <h5
+            class="description"
+            [innerHtml]="s4Description"
+            *ngIf="content?.section4.description; null"
+          ></h5>
+          <a
+            href="{{ content?.section4?.link }}"
+            *ngIf="content?.section4.link; null"
+            rel="noopener"
+          >
+            <div
+              class="button"
+              *ngIf="content?.section4.button; null"
+              [innerHtml]="s4Button"
+            ></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start of Section 5 Chart -->
+    <div class="fullSection">
+      <div class="row" id="section5">
+        <div class="col-12 col-lg-6 textCol my-lg-auto">
+          <h1
+            class="title"
+            *ngIf="content?.section5.title; null"
+            [innerHtml]="s5Title"
+          ></h1>
+          <h2
+            class="subtitle"
+            *ngIf="content?.section5.sub_title; null"
+            [innerHtml]="s5Subtitle"
+          ></h2>
+          <h4
+            class="description"
+            *ngIf="content?.section5.description; null"
+            [innerHtml]="s5Description"
+          ></h4>
+          <a
+            href="{{ content?.section5.link }}"
+            *ngIf="content?.section5.link; null"
+            rel="noopener"
+          >
+            <div class="button" [innerHtml]="s5Button"></div>
+          </a>
+        </div>
+        <div
+          class="col-12 col-lg-6 imageCol initialHide"
+          *ngIf="content?.section5?.image; null"
+        >
+          <img
+            class="main-image animated slide-in-right lazyload"
+            [src]="backendUrl + content?.section5?.image"
+            (load)="show()"
+            alt="{{ content?.section5.title }}"
+          /><img
+            class="
+              desktop-image
+              d-flex
+              mx-auto
+              animated
+              slide-in-right
+              lazyload
+            "
+            [src]="backendUrl + content?.section5?.desktop_image"
+            (load)="show()"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fullFooter">
+    <app-footer class="footer"></app-footer>
+  </div>
+</div>

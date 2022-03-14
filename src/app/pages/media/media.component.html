@@ -1,0 +1,180 @@
+<ngx-spinner bdColor="#013e6a" size="medium" color="#fff" type="ball-scale-multiple"></ngx-spinner>
+
+<!-- START Header Section -->
+<!-- <app-header [headerList]="content?.header"></app-header> -->
+<!-- END Header Section -->
+
+<!-- Section 1 -->
+<div class="row" id="section1">
+  <div id="carouselExampleControls" class="carousel slide initialHide" animateOnScroll
+    animationName="animated fade-in-bottom" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <ng-container *ngFor="let item of content?.section1; index as i">
+        <li data-target="#carouselExampleIndicators active" data-slide-to="0" *ngIf="i < 6"></li>
+      </ng-container>
+    </ol>
+    <div class="carousel-inner">
+      <ng-container *ngFor="let item of content?.section1; index as i">
+        <div class="carousel-item" [ngClass]="{ active: i == 0 }">
+          <img class="d-block lazyload" [src]="backendUrl + item?.image" *ngIf="i < 6" (load)="show()" />
+        </div>
+      </ng-container>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" rel="noopener">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" rel="noopener">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Section 2 What's News-->
+<div class="row" id="section2">
+  <div class="col-12 textCol initialHide" animateOnScroll animationName="animated fade-in-bottom">
+    <h1 class="title" *ngIf="!khmer" style="text-transform: capitalize !important">
+      What's new?
+    </h1>
+    <h1 class="title" *ngIf="khmer">ដំណឹងថ្មីៗ</h1>
+  </div>
+
+  <div *ngIf="mobile; then thenCard; else elseCard"></div>
+
+  <!-- Mobile Layout -->
+  <ng-template #thenCard>
+    <div class="cards mr-3 ml-3 mb-3">
+      <ng-container *ngFor="let item of post; index as i">
+        <div class="card" *ngIf="i <= 5">
+          <div>
+            <img [src]="backendUrl + item?.image" class="main-image lazyload" (load)="show()" />
+          </div>
+          <h4 class="noselect title shorten-5 shorten-2 text-left" [innerHtml]="item?.title"></h4>
+          <h6 class="noselect shorten-4 description text-left">
+            <div [innerHtml]="item?.body"></div>
+          </h6>
+          <a class="link" href="/media/{{ item?.category.name }}/{{ item?.slug }}" rel="noopener">
+            <h5>{{ cta }}</h5>
+          </a>
+        </div>
+      </ng-container>
+    </div>
+  </ng-template>
+
+  <!-- Desktop Layout -->
+  <ng-template #elseCard>
+    <div class="row mr-3 ml-3 mb-3 cards2">
+      <!-- Card 1 -->
+      <div class="col-3 offset-2" *ngIf="post[5]?.title; null">
+        <div class="card">
+          <div>
+            <img [src]="backendUrl + post[5].image" class="main-image lazyload" (load)="show()" />
+          </div>
+          <h4 class="noselect title shorten-5">
+            {{ post[5]?.title }}
+          </h4>
+          <h6 class="noselect description shorten-5" [innerHtml]="post[5]?.body"></h6>
+          <a routerLink="/media/event/{{ post[5].slug }}" rel="noopener">
+            <h5 *ngIf="!khmer">Learn more</h5>
+            <h5 *ngIf="khmer">ស្វែងយល់បន្ថែម</h5>
+          </a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-3" *ngIf="post[4]?.title; null">
+        <div class="card">
+          <div>
+            <img [src]="backendUrl + post[4]?.image" class="main-image lazyload" />
+          </div>
+          <h4 class="noselect title shorten-5">{{ post[4]?.title }}</h4>
+          <h6 class="noselect description shorten-5" [innerHtml]="post[4]?.body"></h6>
+          <a routerLink="/media/event/{{ post[4].slug }}" rel="noopener">
+            <h5 *ngIf="!khmer">Learn more</h5>
+            <h5 *ngIf="khmer">ស្វែងយល់បន្ថែម</h5>
+          </a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-3" *ngIf="post[3]?.title; null">
+        <div class="card">
+          <div>
+            <img [src]="backendUrl + post[3]?.image" class="main-image lazyload" />
+          </div>
+          <h4 class="noselect title shorten-5">{{ post[3]?.title }}</h4>
+          <h6 class="noselect description shorten-5" [innerHtml]="post[3]?.body"></h6>
+          <a routerLink="/media/event/{{ post[3].slug }}" rel="noopener">
+            <h5 *ngIf="!khmer">Learn more</h5>
+            <h5 *ngIf="khmer">ស្វែងយល់បន្ថែម</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row mr-3 ml-3 mb-3 cards2">
+      <!-- Card 4 -->
+      <div class="col-3 offset-2" *ngIf="post[2]?.title; null">
+        <div class="card">
+          <div>
+            <img [src]="backendUrl + post[2]?.image" class="main-image lazyload" />
+          </div>
+          <h4 class="title">{{ post[2]?.title }}</h4>
+          <h6 class="description description shorten-5">
+            {{ post[2]?.excerpt }}
+          </h6>
+          <h4 class="noselect title shorten-5" *ngIf="khmer">
+            {{ post[2]?.kh_title }}
+          </h4>
+          <h6 class="noselect description shorten-5" *ngIf="khmer">
+            {{ post[2]?.kh_body }}
+          </h6>
+          <a routerLink="/media/event/{{ post[2].slug }}" rel="noopener">
+            <h5 *ngIf="!khmer">Learn more</h5>
+            <h5 *ngIf="khmer">ស្វែងយល់បន្ថែម</h5>
+          </a>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="col-3" *ngIf="post[1]?.title; null">
+        <div class="card">
+          <div>
+            <img [src]="backendUrl + post[1]?.image" class="main-image lazyload" />
+          </div>
+          <h4 class="noselect title shorten-5" [innerHtml]="post[1]?.title"></h4>
+          <h6 class="noselect description description shorten-5">
+            {{ post[1]?.excerpt }}
+          </h6>
+          <a routerLink="/media/event/{{ post[1].slug }}" rel="noopener">
+            <h5 *ngIf="!khmer">Learn more</h5>
+            <h5 *ngIf="khmer">ស្វែងយល់បន្ថែម</h5>
+          </a>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="col-3" *ngIf="post[0]?.title; null">
+        <div class="card">
+          <div>
+            <img [src]="backendUrl + post[0]?.image" class="main-image lazyload" />
+          </div>
+          <h4 class="noselect title shorten-5">
+            {{ post[0]?.title }}
+          </h4>
+          <h6 class="noselect description shorten-5" [innerHtml]="post[0]?.body"></h6>
+          <h4 class="noselect title shorten-5" *ngIf="khmer">
+            {{ post[0]?.kh_title }}
+          </h4>
+          <h6 class="noselect description shorten-5" *ngIf="khmer">
+            {{ post[0]?.kh_excerpt }}
+          </h6>
+          <a routerLink="/media/event/{{ post[0].slug }}" rel="noopener">
+            <h5 *ngIf="!khmer">Learn more</h5>
+            <h5 *ngIf="khmer">ស្វែងយល់បន្ថែម</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<div class="">
+  <app-footer class="footer"></app-footer>
+</div>

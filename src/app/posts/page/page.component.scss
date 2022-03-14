@@ -1,0 +1,34 @@
+@import "/src/settings";
+
+.imageCol {
+  margin-top: 2em;
+  img {
+    max-width: 90%;
+    width: 90vw;
+    object-fit: cover;
+    border-radius: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.15) 0.5em 0.5em 0.5em;
+  }
+}
+.textCol {
+  margin-top: 2em;
+  margin-bottom: 4em;
+  .date,
+  .title,
+  .subtitle,
+  .category,
+  .description,
+  .button {
+    margin-left: $text-margin;
+    margin-right: $text-margin;
+  }
+}
+
+@media only screen and (min-width: $md_screen) and (orientation: portrait) {
+}
+@media only screen and (min-width: $md_screen) and (orientation: landscape) {
+}
+@media only screen and (min-width: $lg_screen) {
+}
+@media only screen and (min-width: $xl_screen) {
+}

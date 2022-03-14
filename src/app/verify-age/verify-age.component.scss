@@ -1,0 +1,94 @@
+@import "/src/settings";
+
+#contactForm {
+  //background-color: $primary_color;
+  background-image: url(../../assets/images/gradient-background.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  min-height: 100vh;
+  .imageCol {
+    padding-top: 8vh;
+    img {
+      width: 40vw;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+      //RESPONSIVENESS
+      @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+        width: 25vw;
+      }
+      @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+        width: 10vw;
+      }
+      @media only screen and (min-width: $lg_screen) {
+        width: 12vw;
+      }
+      @media only screen and (min-width: $xl_screen) {
+      }
+    }
+  }
+  .country {
+    height: 0;
+    #exampleFormControlSelect1 {
+      background-color: rgba(1, 1, 1, 0.5);
+      border: 0;
+      border-radius: 0;
+      height: 50px;
+      font-family: $default_font;
+      font-size: 22px;
+      color: white;
+      line-height: 24px;
+      position: relative;
+      top: -2vh;
+    }
+    //RESPONSIVENESS
+    @media only screen and (min-width: $md_screen) and (orientation: portrait) {
+    }
+    @media only screen and (min-width: $md_screen) and (orientation: landscape) {
+    }
+    @media only screen and (min-width: $lg_screen) {
+    }
+    @media only screen and (min-width: $xl_screen) {
+    }
+  }
+  .title {
+    text-align: center;
+    margin-bottom: 3vh;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 900;
+    font-size: 1200px;
+  }
+  button {
+    background-color: white !important;
+    text-align: center !important;
+    border-radius: 1px !important;
+    color: $primary_color !important;
+    width: 100% !important;
+    line-height: 22px !important;
+  }
+  form {
+    width: 100%;
+  }
+  .form-group {
+    margin-bottom: 0;
+    padding: 0;
+    height: auto;
+  }
+  .birthday {
+    margin: 0;
+  }
+}
+input.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
+input.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
+
+button:disabled {
+  opacity: 0.75 !important;
+}

@@ -1,0 +1,55 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+<!-- START Header Section -->
+<!-- <app-header [headerList]="content?.header"></app-header> -->
+<!-- END Header Section -->
+
+<img
+  class="header-background lazyload"
+  src="../../../assets/images/carreer.jpg"
+/>
+<!-- END Header Section -->
+<div class="container-lg">
+  <div class="row">
+    <h1 class="pageTitle">
+      <a routerLink="/media" rel="noopener">Media</a> |
+      <span class="category">{{ paramQuery }}</span>
+    </h1>
+  </div>
+  <div class="content">
+    <ng-container *ngFor="let item of content; index as i">
+      <div
+        *ngIf="(item?.category?.name | lowercase) == (paramQuery | lowercase)"
+      >
+        <div class="row itemCol">
+          <div class="col-4 col-md-5 col-lg-4 imageCol">
+            <a
+              href="/media/{{ item?.category?.name }}/{{ item?.slug }}"
+              rel="noopener"
+              ><img
+                class="main-image max-auto d-flex lazyload"
+                [src]="backendUrl + item?.image"
+                *ngIf="item?.image"
+                (load)="show()"
+            /></a>
+          </div>
+          <div class="col-8 col-md-7 col-lg-8 textCol">
+            <a
+              href="/media/{{ item?.category?.name }}/{{ item?.slug }}"
+              rel="noopener"
+              ><h4 class="title shorten-2" [innerHtml]="item?.title"></h4
+            ></a>
+            <p class="description shorten-3" [innerHtml]="item?.excerpt"></p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<div class="fullFooter12">
+  <app-footer class="footer"></app-footer>
+</div>

@@ -1,0 +1,213 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+
+<div class="pageContainer">
+  <!-- START Header Section -->
+  <div class="fullSection">
+    <app-header [headerList]="content?.header[0]"></app-header>
+  </div>
+  <!-- START Home Section 01 Text Image Right -->
+  <div class="fullSection">
+    <div class="row" id="section1">
+      <div
+        class="col-12 col-lg-6 textCol initialHide my-lg-auto"
+        animateOnScroll
+        animationName="animated fade-in-bottom"
+      >
+        <h1
+          class="title"
+          *ngIf="content?.section1?.title; null"
+          [innerHtml]="s1Title"
+        ></h1>
+        <h2
+          class="subtitle"
+          *ngIf="content?.section1?.sub_title; null"
+          [innerHtml]="s1Subtitle"
+        ></h2>
+        <h5
+          class="description"
+          *ngIf="content?.section1?.description; null"
+          [innerHtml]="s1Description"
+        ></h5>
+        <a
+          href="{{ content?.section1?.link }}"
+          *ngIf="content?.section1?.link; null"
+          rel="noopener"
+        >
+          <div class="button" [innerHtml]="s1Button"></div>
+        </a>
+      </div>
+      <div
+        class="col-12 col-lg-6 imageCol"
+        *ngIf="content?.section1?.image; null"
+      >
+        <img
+          class="main-image initialHide lazyload"
+          [src]="backendUrl + content?.section1?.image"
+          animateOnScroll
+          animationName="animated slide-in-right"
+          *ngIf="content?.section1?.image"
+          alt="{{ content?.section1?.title }}"
+        />
+        <img
+          class="desktop-image initialHide mx-lg-auto d-lg-flex lazyload"
+          [src]="backendUrl + content?.section1?.desktop_image"
+          animateOnScroll
+          animationName="animated slide-in-right"
+          *ngIf="content?.section1?.desktop_image"
+          alt="{{ content?.section1?.title }}"
+        />
+      </div>
+      <div
+        class="col-12 col-lg-6 imageCol2 initialHide"
+        animateOnScroll
+        animationName="animated slide-in-left"
+        *ngIf="content?.section1?.secondary_image; null"
+      >
+        <img
+          class="secondary-image lazyload"
+          [src]="backendUrl + content?.section1?.secondary_image"
+          alt="{{ content?.section1?.title }}"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- START Home Section 02 -->
+  <div class="fullSection">
+    <div class="row" id="section2">
+      <div
+        class="col-12 col-lg-6 textCol initialHide my-lg-auto"
+        animateOnScroll
+        animationName="animated fade-in-bottom"
+      >
+        <h1
+          class="title"
+          *ngIf="content?.section2?.title; null"
+          [innerHtml]="s2Title"
+        ></h1>
+        <h2
+          class="subtitle"
+          *ngIf="content?.section2?.sub_title; null"
+          [innerHtml]="s2Subtitle"
+        ></h2>
+        <h5
+          class="description"
+          *ngIf="content?.section2?.description; null"
+          [innerHtml]="s2Description"
+        ></h5>
+        <a
+          href="{{ content?.section2?.link }}"
+          *ngIf="content?.section2?.link; null"
+          rel="noopener"
+        >
+          <div class="button" [innerHtml]="s2Button"></div>
+        </a>
+      </div>
+      <div
+        class="col-12 col-lg-6 imageCol initialHide"
+        animateOnScroll
+        animationName="animated rotate-in-2-fwd-cw"
+        *ngIf="content?.section2?.image; null"
+      >
+        <img
+          class="main-image lazyload"
+          [src]="backendUrl + content?.section2?.image"
+          alt="{{ content?.section2?.title }}"
+          (load)="show()"
+        />
+        <img
+          class="desktop-image mx-auto d-flex lazyload"
+          [src]="backendUrl + content?.section2?.desktop_image"
+          alt="{{ content?.section2?.title }}"
+          (load)="show()"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- START Home Section 03 Carousel -->
+  <div class="fullSection">
+    <div class="row" id="section3">
+      <div
+        class="carousel slide initialHide"
+        animateOnScroll
+        animationName="animated fade-in"
+        data-ride="carousel"
+        *ngIf="content?.section3; null"
+        id="carouselExampleIndicators"
+      >
+        <div class="carousel-inner">
+          <ng-container *ngFor="let home of content?.section3; index as i">
+            <div class="carousel-item" [ngClass]="{ active: i == 0 }">
+              <div class="row">
+                <div class="col-5 imageCol">
+                  <img
+                    [src]="backendUrl + home?.image"
+                    class="main-image fade-in mx-auto d-flex lazyload"
+                    *ngIf="home?.image; null"
+                    alt="{{ home?.title }}"
+                  />
+                </div>
+                <div class="col-7 textCol pt-2">
+                  <h5
+                    class="aboveTitle"
+                    *ngIf="home?.above_title; null"
+                    [innerHtml]="home?.above_title"
+                  ></h5>
+                  <h4
+                    class="title"
+                    *ngIf="home?.title; null"
+                    [innerHtml]="home.title"
+                  ></h4>
+                  <h4
+                    class="subtitle"
+                    *ngIf="home?.sub_title; null"
+                    [innerHtml]="home?.sub_title"
+                  ></h4>
+                  <h5
+                    class="description"
+                    *ngIf="home?.description; null"
+                    [innerHtml]="home?.description"
+                  ></h5>
+                  <a href="{{ home?.link }}" *ngIf="home?.link" rel="noopener">
+                    <button>{{ home?.button }}</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <a
+          class="carousel-control-prev icon"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+          rel="noopener"
+        >
+          <fa-icon [icon]="faChevronCircleLeft"></fa-icon>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next icon"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+          rel="noopener"
+        >
+          <fa-icon [icon]="faChevronCircleRight"></fa-icon>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="fullFooter">
+    <app-footer class="footer"></app-footer>
+  </div>
+</div>

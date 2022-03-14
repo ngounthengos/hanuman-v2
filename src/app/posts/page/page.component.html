@@ -1,0 +1,41 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+<!-- START Header Section -->
+<!-- <app-header [headerList]="content?.header"></app-header> -->
+<!-- END Header Section -->
+
+<div class="container-lg">
+  <div class="row">
+    <div class="col-12 imageCol">
+      <img
+        class="main-image mx-auto d-block lazyload"
+        [src]="backendUrl + article?.image"
+        (load)="show()"
+      />
+    </div>
+    <div class="col-12 textCol">
+      <h1
+        class="title"
+        [innerHtml]="contentTitle"
+        *ngIf="contentTitle; null"
+      ></h1>
+      <h2
+        class="subtitle"
+        [innerHtml]="contentSubtitle"
+        *ngIf="contentSubtitle; null"
+      ></h2>
+      <div
+        [innerHtml]="contentDescription"
+        class="description"
+        *ngIf="contentDescription; null"
+      ></div>
+    </div>
+  </div>
+</div>
+<div class="fullFooter12">
+  <app-footer class="footer"></app-footer>
+</div>

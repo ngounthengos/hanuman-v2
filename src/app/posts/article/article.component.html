@@ -1,0 +1,39 @@
+<ngx-spinner
+  bdColor="#013e6a"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+></ngx-spinner>
+
+<div class="container-lg">
+  <div class="row breadcrumbs">
+    <h5 class="pageTitle">
+      <a href="/media" rel="noopener">Media</a> |
+      <span class="category"
+        ><a
+          href="/media/{{ article?.category?.name }}"
+          class="category"
+          rel="noopener"
+          >{{ article?.category?.name }}</a
+        ></span
+      >
+    </h5>
+  </div>
+  <div class="row imageCol">
+    <div class="col-12">
+      <img
+        class="main-image mx-auto d-flex lazyload"
+        [src]="backendUrl + article?.image"
+        (load)="show()"
+      />
+    </div>
+  </div>
+  <div class="row textCol">
+    <div class="col-12">
+      <h1 class="title" [innerHtml]="contentTitle"></h1>
+      <h2 class="subtitle" [innerHtml]="contentSubtitle"></h2>
+      <div [innerHtml]="contentDescription" class="description"></div>
+    </div>
+  </div>
+</div>
+<app-footer class="footer"></app-footer>

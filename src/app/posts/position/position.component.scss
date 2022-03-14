@@ -1,0 +1,89 @@
+@import "/src/settings";
+.breadcrumbs {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  margin-left: $text-margin !important;
+  margin-right: $text-margin !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $primary_color;
+  .category {
+    color: $yellow_color;
+  }
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}
+.imageCol {
+  margin-left: $text-margin !important;
+  margin-right: $text-margin !important;
+}
+img {
+  max-width: 90vw !important;
+  object-fit: cover;
+  height: 56.25vw;
+  margin-bottom: 1em;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.date,
+.title,
+.category,
+.description,
+.subtitle {
+  line-height: 1.5;
+}
+.description {
+  margin-top: 2vh;
+  margin-bottom: 10vh;
+  line-height: 1.5 !important;
+}
+
+.tagCategory {
+  background-color: $primary_color;
+}
+
+.carousel {
+  margin-left: auto;
+  margin-right: auto;
+}
+.itemCol,
+.textCol {
+  margin-left: $text-margin !important;
+  margin-right: $text-margin !important;
+}
+
+@media only screen and (min-width: $md_screen) and (orientation: portrait) {
+  .main-image {
+    width: 100%;
+    height: 50vw;
+  }
+}
+@media only screen and (min-width: $md_screen) and (orientation: landscape) {
+  .main-image {
+    width: 100%;
+    height: 40vw;
+  }
+}
+@media only screen and (min-width: $lg_screen) {
+  .breadcrumbs {
+    margin-top: 5vh;
+  }
+  .imageCol {
+    margin-bottom: 2em;
+  }
+
+  .main-image {
+    width: 90%;
+    height: 400px;
+  }
+  .description {
+    margin-top: 2em;
+    line-height: 2 !important;
+  }
+  .textCol {
+    margin-bottom: 15em;
+  }
+}
+@media only screen and (min-width: $xl_screen) {
+}
